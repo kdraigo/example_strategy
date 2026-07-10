@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	sdk "github.com/kdraigo/flow_v1/dev_sdk"
-	"github.com/kdraigo/flow_v1/dev_sdk/types"
+	sdk "github.com/kdraigo/dev_sdk"
+	"github.com/kdraigo/dev_sdk/types"
 )
 
 const (
@@ -92,10 +92,9 @@ func main() {
 }
 
 func placeOrder(ctx *types.Context, side types.OrderSide, price, rsi float64, reason string) {
-	_, err := ctx.PlaceOrder(ctx.Ctx, &types.OrderRequest{
+	_, err := ctx.PlaceOrder(&types.OrderRequest{
 		Exchange: exchange,
-		Asset:    quoteAsset,
-		Pair:     pair,
+		Symbol:   pair,
 		Side:     side,
 		Type:     types.OrderTypeMarket,
 		Quantity: tradeQty,

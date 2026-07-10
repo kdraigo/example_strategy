@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/kdraigo/flow_v1/dev_sdk/types"
+	"github.com/kdraigo/dev_sdk/types"
 )
 
 type RiskParams struct {
@@ -53,19 +53,18 @@ func (r *RiskManager) openLong(ctx *types.Context, c *types.Candle) {
 	}
 	qty := riskAmount / perUnitRisk
 
-	_, err := ctx.PlaceOrder(ctx.Ctx, &types.OrderRequest{
+	_, err := ctx.PlaceOrder(&types.OrderRequest{
 		Exchange: exchange,
-		Asset:    quoteAsset,
-		Pair:     pair,
+		Symbol:   pair,
 		Side:     types.OrderSideBuy,
 		Type:     types.OrderTypeMarket,
 		Quantity: qty,
 		Reason: map[string]any{
-			"signal":    "long_entry",
-			"stop":      stopPrice,
-			"take":      takePrice,
-			"risk_usd":  riskAmount,
-			"qty":       qty,
+			"signal":   "long_entry",
+			"stop":     stopPrice,
+			"take":     takePrice,
+			"risk_usd": riskAmount,
+			"qty":      qty,
 			"entry":    c.Close,
 		},
 	})
@@ -99,19 +98,18 @@ func (r *RiskManager) closePos(ctx *types.Context, exitPrice float64, reason str
 		r.losses++
 	}
 
-	_, err := ctx.PlaceOrder(ctx.Ctx, &types.OrderRequest{
+	_, err := ctx.PlaceOrder(&types.OrderRequest{
 		Exchange: exchange,
-		Asset:    quoteAsset,
-		Pair:     pair,
+		Symbol:   pair,
 		Side:     types.OrderSideSell,
 		Type:     types.OrderTypeMarket,
 		Quantity: r.pos.quantity,
 		Reason: map[string]any{
-			"signal":   reason,
-			"entry":    r.pos.entryPrice,
-			"exit":     exitPrice,
-			"pnl_usd":  pnl,
-			"equity":   r.equity,
+			"signal":  reason,
+			"entry":   r.pos.entryPrice,
+			"exit":    exitPrice,
+			"pnl_usd": pnl,
+			"equity":  r.equity,
 		},
 	})
 	if err != nil {
