@@ -22,6 +22,8 @@ github.com/jpillora/backoff v1.0.0 h1:uvFg412JmmHBHw7iwprIxkPMI+sGQ4kzOWsMeHnm2E
 github.com/jpillora/backoff v1.0.0/go.mod h1:J/6gKK9jxlEcS3zixgDgUAsiuZ7yrSoa/FX5e0EB2j4=
 github.com/kdraigo/dev_sdk v1.0.3 h1:8doDYtQsV9jpopAcIrbF5ZW6LNXSqyiLRrnqZTk0pVg=
 github.com/kdraigo/dev_sdk v1.0.3/go.mod h1:jKlD0hQc5KTMu3w7Z9axozdpupqlxHtmm6ytAHF7200=
+github.com/kdraigo/dev_sdk v1.2.12 h1:yAVgXPcL5y4N+XJJzckvhtkdS10nKlZLJBNj80mzN4U=
+github.com/kdraigo/dev_sdk v1.2.12/go.mod h1:YP0s8o2shD0zOSIngiPNzhp99RJXWD35hTgVbqSZpJc=
 github.com/kr/pretty v0.2.0 h1:s5hAObm+yFO5uHYt5dYjxi2rXrsnmRpJx4OYvIWUaQs=
 github.com/kr/pretty v0.2.0/go.mod h1:ipq/a2n7PKx3OHsz4KJII5eveXtPO4qwEXGdVfWzfnI=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=

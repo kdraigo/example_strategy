@@ -2,7 +2,7 @@ module github.com/kdraigo/example_strategy/with-risk-manager
 
 go 1.25.9
 
-require github.com/kdraigo/dev_sdk v1.0.3
+require github.com/kdraigo/dev_sdk v1.2.12
 
 require (
 	github.com/adshao/go-binance/v2 v2.8.11 // indirect
