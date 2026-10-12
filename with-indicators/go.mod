@@ -2,7 +2,7 @@ module github.com/kdraigo/example_strategy/with-indicators
 
 go 1.25.9
 
-require github.com/kdraigo/dev_sdk v1.3.0
+require github.com/kdraigo/dev_sdk v1.3.1
 
 require (
 	github.com/adshao/go-binance/v2 v2.8.11 // indirect
