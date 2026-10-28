@@ -9,6 +9,7 @@ Starter templates for the kdraigo trading platform. Cloned by `kdraigo-mcp` at s
 | [`basic/`](basic) | Single `main.go` that prints each closed candle. No orders, no indicators. Use this when you want a clean slate to write your own logic. |
 | [`with-indicators/`](with-indicators) | RSI-based market-buy / market-sell. Reads `OnCandleFor(1h)`, places one order per signal. Use this when your strategy is indicator-driven. |
 | [`with-risk-manager/`](with-risk-manager) | Two-file layout (`main.go` + `risk.go`) with a separate signal layer and a stateful position/PnL manager. Use this when you need stop-loss, take-profit, or position sizing. |
+| [`with-atr-bracket/`](with-atr-bracket) | EMA-cross longs whose stop and target are multiples of ATR, resting on the venue as one bracket; size is what loses `RISK_PER_TRADE` of the balance at the stop. On dev_sdk v1.8.1, with its settings declared through `dev_sdk/params` (override any of them with an env var of the same name). Use this for volatility-scaled exits. |
 
 ## Configuration
 
