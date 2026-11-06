@@ -20,7 +20,7 @@ export KDRAIGO_KEY_ID=<your-ed25519-key-id>
 export KDRAIGO_PRIVATE_KEY=<hex-encoded-ed25519-private-key>
 ```
 
-Register a key via the kdraigo dashboard or `users_service/cmd/test_client`.
+Create a key on kdraigo.com under Account → API keys ([kdraigo.com/account/api-keys](https://kdraigo.com/account/api-keys)).
 
 ## Running a template
 
@@ -31,8 +31,8 @@ go run .
 ```
 
 By default templates run against `http://localhost:4000` (a local backtester_engine).
-To target the hosted platform, set `KDRAIGO_BACKTESTER_URL=https://kdraigo.com/backtester`.
+To target the hosted platform, set `KDRAIGO_BACKTESTER_URL=https://api.kdraigo.com`.
 
 ## Date range
 
-Templates default to a 30-day backtest ending today. Edit `startTime` / `endTime` in `main.go`.
+`basic`, `with-indicators` and `with-risk-manager` default to a 30-day backtest ending today: edit `startTime` / `endTime` in `main.go`. `with-atr-bracket` declares `BT_START` and `BT_END` (default: the last 90 days): set them as env vars, e.g. `BT_START=2025-01-01`.
