@@ -30,8 +30,8 @@ go mod tidy
 go run .
 ```
 
-By default templates run against `http://localhost:4000` (a local backtester_engine).
-To target the hosted platform, set `KDRAIGO_BACKTESTER_URL=https://api.kdraigo.com`.
+By default templates run on the hosted platform (`https://api.kdraigo.com`).
+To use a local backtester_engine instead, set `KDRAIGO_BACKTESTER_URL=http://localhost:4000`.
 
 ## Date range
 

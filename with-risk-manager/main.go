@@ -26,7 +26,7 @@ func main() {
 
 	endpoint := os.Getenv("KDRAIGO_BACKTESTER_URL")
 	if endpoint == "" {
-		endpoint = "http://localhost:4000"
+		endpoint = "https://api.kdraigo.com" // the hosted engine
 	}
 
 	endTime := time.Now().UTC()
